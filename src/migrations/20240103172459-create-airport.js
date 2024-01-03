@@ -1,11 +1,8 @@
 "use strict";
-
-const { UniqueConstraintError } = require("sequelize");
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("Cities", {
+    await queryInterface.createTable("Airports", {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -13,10 +10,22 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       name: {
+        type: Sequelize.STRING,
         unique: true,
         allowNull: false,
-
+      },
+      code: {
         type: Sequelize.STRING,
+        unique: true,
+        allowNull: false,
+      },
+      address: {
+        type: Sequelize.STRING,
+        unique: true,
+      },
+      cityId: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
       },
       createdAt: {
         allowNull: false,
@@ -29,6 +38,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("Cities");
+    await queryInterface.dropTable("Airports");
   },
 };
