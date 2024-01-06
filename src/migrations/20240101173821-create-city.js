@@ -1,7 +1,4 @@
 "use strict";
-
-const { UniqueConstraintError } = require("sequelize");
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -13,10 +10,9 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       name: {
-        unique: true,
-        allowNull: false,
-
         type: Sequelize.STRING,
+        allowNull: false,
+        unique: true,
       },
       createdAt: {
         allowNull: false,
