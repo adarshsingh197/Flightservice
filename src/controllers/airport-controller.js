@@ -23,7 +23,7 @@ async function createAirport(req, res) {
 
 async function getAirports(req, res) {
   try {
-    const airport = await AirportService.getAirport();
+    const airport = await AirportService.getAirports();
     SuccessResponse.data = airport;
     return res.status(StatusCodes.OK).json(SuccessResponse);
   } catch (error) {
