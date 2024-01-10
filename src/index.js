@@ -15,9 +15,9 @@ app.listen(3000, async () => {
   // console.log(city);
 
   // await city.createAirport({ name: "Delhi Airport", code: "IND" });
-  await City.destroy({
-    where: {
-      id: 17,
-    },
-  });
+  // await City.destroy({
+  //   where: {
+  //     id: 17,
+  //   },
+  // });
 });
