@@ -7,5 +7,6 @@ const { AirportMiddlewares } = require("../../middlewares");
 
 console.log("hellllllllllllllllllllllllllllll");
 router.post("/", FlightController.createFlight);
+router.get("/", FlightController.getAllFlights);
 
 module.exports = router;
