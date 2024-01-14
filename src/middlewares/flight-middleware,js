@@ -3,7 +3,7 @@ const { StatusCodes } = require("http-status-codes");
 const { ErrorResponse } = require("../utils/common");
 const { AppError } = require("../utils/errors");
 
-function ValidateRequest(req, res, next) {
+function ValidateCreateRequest(req, res, next) {
   if (req.body.name && req.body.code && req.body.cityId) {
     next();
   }
@@ -30,5 +30,5 @@ function ValidateRequest(req, res, next) {
 }
 
 module.exports = {
-  ValidateRequest,
+  ValidateCreateRequest,
 };
